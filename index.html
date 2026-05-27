@@ -163,22 +163,6 @@
             <span class="entry-tag remit">Cash Application</span>
             <div class="trigger">EDI 820 — lump sum offset</div>
           </div>
-        </div>
-        <div class="t-side credit">
-          <div class="t-side-label">Credit</div>
-          <div class="entry">
-            <span class="entry-tag remit">Dispute - Debit Adj</span>
-            <div class="trigger">EDI 812 Debit Adjustment, post-approval</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="t-account">
-      <div class="t-account-name">Cash</div>
-      <div class="t-account-body">
-        <div class="t-side debit">
-          <div class="t-side-label">Debit</div>
           <div class="entry">
             <span class="entry-tag remit">Customer Deposit</span>
             <div class="trigger">Deposit received from customer prior to shipment</div>
@@ -186,8 +170,10 @@
         </div>
         <div class="t-side credit">
           <div class="t-side-label">Credit</div>
-          <div class="empty">—</div>
-          <div class="note">Credited by payment disbursements in FinAcc</div>
+          <div class="entry">
+            <span class="entry-tag remit">Dispute - Debit Adj</span>
+            <div class="trigger">EDI 812 Debit Adjustment, post-approval</div>
+          </div>
         </div>
       </div>
     </div>
