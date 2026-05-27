@@ -42,6 +42,7 @@
     .entry-tag.xfer { background: #fdf4ff; color: #7e22ce; }
     .entry-tag.ret  { background: #f0fdf4; color: #166534; }
     .entry-tag.exp  { background: #fef2f2; color: #991b1b; }
+    .entry-tag.reval { background: #fefce8; color: #92400e; }
     .trigger { font-size: 11px; color: #888; font-style: italic; margin-top: 1px; line-height: 1.4; }
     .note    { font-size: 10px; color: #bbb; font-style: italic; margin-top: 4px; }
     .empty   { color: #ccc; font-style: italic; font-size: 11px; }
@@ -64,6 +65,7 @@
     <span style="background:#fdf4ff;color:#7e22ce;border-radius:3px;padding:1px 6px;font-size:11px;margin-left:4px;">Transfer</span>
     <span style="background:#f0fdf4;color:#166534;border-radius:3px;padding:1px 6px;font-size:11px;margin-left:4px;">Return / Found</span>
     <span style="background:#fef2f2;color:#991b1b;border-radius:3px;padding:1px 6px;font-size:11px;margin-left:4px;">Lost / Adjustment Expense</span>
+    <span style="background:#fefce8;color:#92400e;border-radius:3px;padding:1px 6px;font-size:11px;margin-left:4px;">Revaluation</span>
   </div>
 
   <div class="section-label">Balance Sheet — Assets</div>
@@ -114,6 +116,14 @@
             <span class="entry-tag ret">Receipt - Return</span>
             <div class="trigger">Customer return received at warehouse</div>
           </div>
+          <div class="entry">
+            <span class="entry-tag">Receipt - Drop Ship</span>
+            <div class="trigger">Shipment confirmation to customer on drop ship PO</div>
+          </div>
+          <div class="entry">
+            <span class="entry-tag reval">Inventory Revaluation</span>
+            <div class="trigger">Per unit cost increase — LCM or costing correction</div>
+          </div>
         </div>
         <div class="t-side credit">
           <div class="t-side-label">Credit</div>
@@ -124,6 +134,10 @@
           <div class="entry">
             <span class="entry-tag xfer">Transfer - Out</span>
             <div class="trigger">Transfer out to another warehouse</div>
+          </div>
+          <div class="entry">
+            <span class="entry-tag reval">Inventory Revaluation</span>
+            <div class="trigger">Per unit cost decrease — LCM or costing correction</div>
           </div>
         </div>
       </div>
@@ -146,6 +160,10 @@
           <div class="entry">
             <span class="entry-tag">Receipt</span>
             <div class="trigger">Physical goods receipt at the warehouse</div>
+          </div>
+          <div class="entry">
+            <span class="entry-tag">Receipt - Drop Ship</span>
+            <div class="trigger">Shipment confirmation to customer on drop ship PO</div>
           </div>
         </div>
       </div>
@@ -206,6 +224,26 @@
           <div class="entry">
             <span class="entry-tag ret">Adjust - Found</span>
             <div class="trigger">Items found in the warehouse</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="t-account">
+      <div class="t-account-name">Inventory Revaluation</div>
+      <div class="t-account-body">
+        <div class="t-side debit">
+          <div class="t-side-label">Debit</div>
+          <div class="entry">
+            <span class="entry-tag reval">Inventory Revaluation</span>
+            <div class="trigger">Per unit cost decrease — LCM or costing correction</div>
+          </div>
+        </div>
+        <div class="t-side credit">
+          <div class="t-side-label">Credit</div>
+          <div class="entry">
+            <span class="entry-tag reval">Inventory Revaluation</span>
+            <div class="trigger">Per unit cost increase — LCM or costing correction</div>
           </div>
         </div>
       </div>
